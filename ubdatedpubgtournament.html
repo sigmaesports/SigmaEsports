@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sigma Esports Tournament Registration</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI',sans-serif;
+        }
+
+        body{
+            background:linear-gradient(135deg,#0d1117,#161b22,#21262d);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:30px;
+        }
+
+        .container{
+            width:550px;
+            background:rgba(0,0,0,0.9);
+            border:2px solid #ffb300;
+            border-radius:20px;
+            padding:30px;
+            box-shadow:0 0 30px rgba(255,179,0,0.5);
+            color:white;
+        }
+
+        .logo{
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        .logo img{
+            width:180px;
+            border-radius:15px;
+            box-shadow:0 0 20px #ffb300;
+        }
+
+        h1{
+            text-align:center;
+            color:#ffb300;
+            margin-bottom:5px;
+            text-shadow:0 0 10px #ffb300;
+        }
+
+        .subtitle{
+            text-align:center;
+            color:#c9d1d9;
+            margin-bottom:25px;
+        }
+
+        label{
+            display:block;
+            margin-top:15px;
+            margin-bottom:5px;
+            font-weight:bold;
+            color:#ffcc4d;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            border-radius:10px;
+            border:1px solid #444;
+            background:#161b22;
+            color:white;
+            font-size:15px;
+        }
+
+        input:focus{
+            outline:none;
+            border-color:#ffb300;
+            box-shadow:0 0 10px #ffb300;
+        }
+
+        .payment-box{
+            margin-top:20px;
+            padding:12px;
+            background:#0f5132;
+            border-left:5px solid #00ff88;
+            border-radius:10px;
+            color:white;
+        }
+
+        button{
+            width:100%;
+            margin-top:25px;
+            padding:14px;
+            border:none;
+            border-radius:10px;
+            background:linear-gradient(90deg,#ffb300,#ffd54f);
+            color:black;
+            font-size:18px;
+            font-weight:bold;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            transform:translateY(-2px);
+            box-shadow:0 0 20px #ffb300;
+        }
+
+        #result{
+            margin-top:25px;
+            background:#161b22;
+            border-radius:10px;
+            padding:15px;
+            border-left:5px solid #00ff88;
+        }
+
+        .footer{
+            text-align:center;
+            margin-top:20px;
+            color:#8b949e;
+            font-size:14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Replace logo.png with your Sigma Esports logo file -->
+    <div class="logo">
+        <img src="logo.png" alt="">
+    </div>
+
+    <h1> SIGMA ESPORTS</h1>
+    <p class="subtitle">PUBG Mobile Tournament Registration</p>
+
+    <form id="teamForm">
+
+        <label>UID of First Teammate</label>
+        <input type="text" id="uid1" required>
+
+        <label>UID of Second Teammate</label>
+        <input type="text" id="uid2" required>
+
+        <label>UID of Third Teammate</label>
+        <input type="text" id="uid3" required>
+
+        <label>UID of Fourth Teammate</label>
+        <input type="text" id="uid4" required>
+
+        <label>Team Name</label>
+        <input type="text" id="teamName" placeholder="4T, 7E, etc." required>
+
+        <label>WhatsApp Number</label>
+        <input type="tel" id="whatsapp" placeholder="03XXXXXXXXX" required>
+
+        <div class="payment-box">
+              Easypaisa Number:<br>
+            <strong>03218850994</strong>
+        </div>
+
+        
+
+        <button type="submit">
+              Register Team
+        </button>
+
+    </form>
+
+    <div id="result"></div>
+
+    <div class="footer">
+        Sigma Esports Tournament System
+    </div>
+
+</div>
+
+<script>
+
+document.getElementById("teamForm").addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const uid1 = document.getElementById("uid1").value;
+    const uid2 = document.getElementById("uid2").value;
+    const uid3 = document.getElementById("uid3").value;
+    const uid4 = document.getElementById("uid4").value;
+    const teamName = document.getElementById("teamName").value;
+    const whatsapp = document.getElementById("whatsapp").value;
+
+    document.getElementById("result").innerHTML = `
+        <h3 style="color:#00ff88;">✅ Registration Submitted</h3>
+        <p><b>UID 1:</b> ${uid1}</p>
+        <p><b>UID 2:</b> ${uid2}</p>
+        <p><b>UID 3:</b> ${uid3}</p>
+        <p><b>UID 4:</b> ${uid4}</p>
+        <p><b>Team:</b> ${teamName}</p>
+        <p><b>WhatsApp:</b> ${whatsapp}</p>
+    `;
+
+});
+
+</script>
+
+</body>
+</html>
